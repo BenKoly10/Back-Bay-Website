@@ -34,6 +34,16 @@ export default function Header() {
         {/* Desktop navigation - hidden on mobile/tablet */}
         <nav className="hidden lg:flex items-center gap-4 mr-4">
           <Link
+            to="/"
+            className="px-5 py-2.5 rounded-lg font-medium text-white hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 hover:scale-105 border border-transparent hover:border-[rgb(248,219,135)]/30"
+            activeProps={{
+              className:
+                'px-5 py-2.5 rounded-lg font-medium bg-linear-to-r from-[rgb(248,219,135)] to-[rgb(238,209,125)] text-gray-900 shadow-lg shadow-[rgb(248,219,135)]/50 scale-105 border border-[rgb(248,219,135)]/50',
+            }}
+          >
+            Home
+          </Link>
+          <Link
             to="/upcoming-events"
             className="px-5 py-2.5 rounded-lg font-medium text-white hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 hover:scale-105 border border-transparent hover:border-[rgb(248,219,135)]/30"
             activeProps={{
@@ -67,9 +77,8 @@ export default function Header() {
 
       {/* Mobile/Tablet sidebar menu - slides in from right */}
       <aside
-        className={`fixed top-0 right-0 h-full w-80 bg-gray-900 text-white shadow-2xl z-50 transform transition-all duration-500 ease-out flex flex-col lg:hidden ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
-        }`}
+        className={`fixed top-0 right-0 h-full w-80 bg-gray-900 text-white shadow-2xl z-50 transform transition-all duration-500 ease-out flex flex-col lg:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-[rgb(248,219,135)]/30 bg-gray-800/50">
           <h2 className="text-2xl font-bold text-[rgb(248,219,135)]">Menu</h2>
