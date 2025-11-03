@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as UpcomingEventsRouteImport } from './routes/upcoming-events'
 import { Route as BookNowRouteImport } from './routes/book-now'
+import { Route as SplatRouteImport } from './routes/$'
 import { Route as IndexRouteImport } from './routes/index'
 
 const UpcomingEventsRoute = UpcomingEventsRouteImport.update({
@@ -23,6 +24,11 @@ const BookNowRoute = BookNowRouteImport.update({
   path: '/book-now',
   getParentRoute: () => rootRouteImport,
 } as any)
+const SplatRoute = SplatRouteImport.update({
+  id: '/$',
+  path: '/$',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -31,30 +37,34 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/book-now': typeof BookNowRoute
   '/upcoming-events': typeof UpcomingEventsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/book-now': typeof BookNowRoute
   '/upcoming-events': typeof UpcomingEventsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/$': typeof SplatRoute
   '/book-now': typeof BookNowRoute
   '/upcoming-events': typeof UpcomingEventsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/book-now' | '/upcoming-events'
+  fullPaths: '/' | '/$' | '/book-now' | '/upcoming-events'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/book-now' | '/upcoming-events'
-  id: '__root__' | '/' | '/book-now' | '/upcoming-events'
+  to: '/' | '/$' | '/book-now' | '/upcoming-events'
+  id: '__root__' | '/' | '/$' | '/book-now' | '/upcoming-events'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  SplatRoute: typeof SplatRoute
   BookNowRoute: typeof BookNowRoute
   UpcomingEventsRoute: typeof UpcomingEventsRoute
 }
@@ -75,6 +85,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BookNowRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/$': {
+      id: '/$'
+      path: '/$'
+      fullPath: '/$'
+      preLoaderRoute: typeof SplatRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -87,6 +104,7 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  SplatRoute: SplatRoute,
   BookNowRoute: BookNowRoute,
   UpcomingEventsRoute: UpcomingEventsRoute,
 }
