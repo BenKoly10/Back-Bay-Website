@@ -1,6 +1,6 @@
 {
   "short_name": "Back Bay Music",
-  "name": "Back Bay Music - Live Blues Band from Delaware",
+  "name": "Back Bay Music - We are back bay blues",
   "icons": [
     {
       "src": "favicon.ico",
@@ -22,5 +22,5 @@
   "display": "standalone",
   "theme_color": "#1f2937",
   "background_color": "#ffffff",
-  "description": "Back Bay Music - Professional blues band bringing authentic sounds and unforgettable performances across Delmarva"
+  "description": "Back Bay Music -  A southern Delaware band, blending jazz, funk, and blues with youthful energy and polished groove, turning every beach night into a soulful and groovy jam."
 }

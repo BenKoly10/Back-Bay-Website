@@ -9,6 +9,9 @@ import appCss from '../styles.css?url'
 
 export const Route = createRootRoute({
   head: () => ({
+    // SEO & Social sharing metadata
+    // Use absolute URLs for social previews (GitHub Pages deployment URL)
+    // Note: Update repo/owner if this changes in the future
     meta: [
       {
         charSet: 'utf-8',
@@ -18,13 +21,70 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Back Bay Music — Live Blues Band from Delaware',
+      },
+      {
+        name: 'description',
+        content:
+          'Back Bay Music — Professional blues band bringing authentic sounds and unforgettable performances across Delmarva. Weddings, events, restaurants, and more.',
+      },
+      // Open Graph (Facebook/LinkedIn/Discord/Slack/etc.)
+      {
+        property: 'og:title',
+        content: 'Back Bay Music — Live Blues Band from Delaware',
+      } as any,
+      {
+        property: 'og:description',
+        content:
+          'Back Bay Music — Professional blues band bringing authentic sounds and unforgettable performances across Delmarva. Weddings, events, restaurants, and more.',
+      } as any,
+      {
+        property: 'og:type',
+        content: 'website',
+      } as any,
+      {
+        property: 'og:site_name',
+        content: 'Back Bay Music',
+      } as any,
+      {
+        property: 'og:url',
+        content: 'https://benkoly10.github.io/Back-Bay-Website/',
+      } as any,
+      {
+        property: 'og:image',
+        content: 'https://benkoly10.github.io/Back-Bay-Website/homepage.jpeg',
+      } as any,
+      // Twitter / X
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: 'Back Bay Music — Live Blues Band from Delaware',
+      },
+      {
+        name: 'twitter:description',
+        content:
+          'Back Bay Music — Professional blues band bringing authentic sounds and unforgettable performances across Delmarva. Weddings, events, restaurants, and more.',
+      },
+      {
+        name: 'twitter:image',
+        content: 'https://benkoly10.github.io/Back-Bay-Website/homepage.jpeg',
+      },
+      {
+        name: 'twitter:url',
+        content: 'https://benkoly10.github.io/Back-Bay-Website/',
       },
     ],
     links: [
       {
         rel: 'stylesheet',
         href: appCss,
+      },
+      {
+        rel: 'canonical',
+        href: 'https://benkoly10.github.io/Back-Bay-Website/',
       },
     ],
   }),
