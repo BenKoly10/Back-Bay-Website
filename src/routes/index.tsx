@@ -3,8 +3,12 @@ import { useState, useEffect } from 'react'
 
 export const Route = createFileRoute('/')({ component: App })
 
-// Base-aware asset helper
-const withBase = (path: string) => new URL(path, import.meta.env.BASE_URL).href
+// Base-aware asset helper that works on GitHub Pages without using URL()
+const withBase = (path: string) => {
+  const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '')
+  const p = String(path).replace(/^\/+/, '')
+  return `${base}/${p}`
+}
 
 const bandImages = [
   withBase('Band-Pictures/2D49E183-ADD1-4009-92BE-0366AC1E0852.jpeg'),

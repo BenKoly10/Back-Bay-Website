@@ -1,6 +1,6 @@
 {
   "short_name": "Back Bay Music",
-  "name": "TODO",
+  "name": "Back Bay Music - Live Blues Band from Delaware",
   "icons": [
     {
       "src": "favicon.ico",
@@ -8,12 +8,12 @@
       "type": "image/x-icon"
     },
     {
-      "src": "logo192.png",
+      "src": "android-chrome-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "logo512.png",
+      "src": "android-chrome-512x512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
@@ -22,5 +22,5 @@
   "display": "standalone",
   "theme_color": "#1f2937",
   "background_color": "#ffffff",
-  "description": "TODO"
+  "description": "Back Bay Music - Professional blues band bringing authentic sounds and unforgettable performances across Delmarva"
 }

@@ -22,8 +22,12 @@ export default function Header() {
         {/* Logo on the left */}
         <h1 className="ml-4 text-xl font-semibold">
           <Link to="/">
-          {/* Use base-aware URL for logo so it loads on GitHub Pages */}
-          <img src={new URL('logo-transparent.png', import.meta.env.BASE_URL).href} alt="Back Bay Blues" className="h-15" />
+            {/* Use base-aware URL for logo so it loads on GitHub Pages */}
+            <img
+              src={`${(import.meta.env.BASE_URL || '/').replace(/\/+$/, '')}/logo-transparent.png`}
+              alt="Back Bay Blues"
+              className="h-15"
+            />
           </Link>
         </h1>
 
