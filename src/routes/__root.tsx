@@ -48,11 +48,11 @@ export const Route = createRootRoute({
       } as any,
       {
         property: 'og:url',
-        content: 'https://benkoly10.github.io/Back-Bay-Website/',
+        content: 'https://backbayblues.com/',
       } as any,
       {
         property: 'og:image',
-        content: 'https://benkoly10.github.io/Back-Bay-Website/homepage.jpeg',
+        content: 'https://backbayblues.com/homepage.jpeg',
       } as any,
       // Twitter / X
       {
@@ -70,11 +70,11 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:image',
-        content: 'https://benkoly10.github.io/Back-Bay-Website/homepage.jpeg',
+        content: 'https://backbayblues.com/homepage.jpeg',
       },
       {
         name: 'twitter:url',
-        content: 'https://benkoly10.github.io/Back-Bay-Website/',
+        content: 'https://backbayblues.com/',
       },
     ],
     links: [
@@ -84,7 +84,7 @@ export const Route = createRootRoute({
       },
       {
         rel: 'canonical',
-        href: 'https://benkoly10.github.io/Back-Bay-Website/',
+        href: 'https://backbayblues.com/',
       },
     ],
   }),

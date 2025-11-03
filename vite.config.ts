@@ -5,8 +5,8 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig(({ mode }) => ({
-  // Set base path for GitHub Pages
-  base: process.env.NODE_ENV === 'production' ? '/Back-Bay-Website/' : '/',
+  // Custom domain uses root path
+  base: '/',
   build: {
     outDir: 'dist/client',
     emptyOutDir: true,
