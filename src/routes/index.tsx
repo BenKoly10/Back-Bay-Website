@@ -1,14 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { useState, useEffect } from 'react'
+import { withBase } from '../lib/utils'
 
 export const Route = createFileRoute('/')({ component: App })
-
-// Base-aware asset helper that works on GitHub Pages without using URL()
-const withBase = (path: string) => {
-  const base = (import.meta.env.BASE_URL || '/').replace(/\/+$/, '')
-  const p = String(path).replace(/^\/+/, '')
-  return `${base}/${p}`
-}
 
 const bandImages = [
   withBase('Band-Pictures/2D49E183-ADD1-4009-92BE-0366AC1E0852.jpeg'),
@@ -38,7 +32,7 @@ function App() {
 
   return (
     <div>
-      <div className="relative w-screen h-screen">
+      <div className="relative w-full h-screen overflow-hidden">
         <img src={withBase('homepage.jpeg')} alt="Band Group Photo" className="w-full h-full object-cover object-bottom" />
         <div className="absolute inset-0 flex items-center justify-center pt-16">
           <h1 className="text-6xl md:text-8xl font-bold text-white drop-shadow-2xl">
