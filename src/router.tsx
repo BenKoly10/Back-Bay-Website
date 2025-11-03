@@ -1,16 +1,16 @@
 import {
   createRouter,
-  createHashHistory,
+  createBrowserHistory,
   createMemoryHistory,
 } from '@tanstack/react-router'
 
 // Import the generated route tree
 import { routeTree } from './routeTree.gen'
 
-// Use hash history in the browser (for GitHub Pages) and memory history on the server (SSR)
+// Use browser history in the browser and memory history on the server (SSR)
 const history =
   typeof window !== 'undefined'
-    ? createHashHistory()
+    ? createBrowserHistory()
     : createMemoryHistory({ initialEntries: ['/'] })
 
 // Create a new router instance
