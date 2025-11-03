@@ -21,22 +21,22 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'Back Bay Music — Live Blues Band from Delaware',
+        title: 'Back Bay Music — Back Bay Music - We are back bay blues',
       },
       {
         name: 'description',
         content:
-          'Back Bay Music — Professional blues band bringing authentic sounds and unforgettable performances across Delmarva. Weddings, events, restaurants, and more.',
+          'Back Bay Music — A southern Delaware band, blending jazz, funk, and blues with youthful energy and polished groove, turning every beach night into a soulful and groovy jam.',
       },
       // Open Graph (Facebook/LinkedIn/Discord/Slack/etc.)
       {
         property: 'og:title',
-        content: 'Back Bay Music — Live Blues Band from Delaware',
+        content: 'Back Bay Music — Back Bay Music - We are back bay blues',
       } as any,
       {
         property: 'og:description',
         content:
-          'Back Bay Music — Professional blues band bringing authentic sounds and unforgettable performances across Delmarva. Weddings, events, restaurants, and more.',
+          'Back Bay Music — A southern Delaware band, blending jazz, funk, and blues with youthful energy and polished groove, turning every beach night into a soulful and groovy jam.',
       } as any,
       {
         property: 'og:type',
@@ -61,12 +61,12 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:title',
-        content: 'Back Bay Music — Live Blues Band from Delaware',
+        content: 'Back Bay Music — Back Bay Music - We are back bay blues',
       },
       {
         name: 'twitter:description',
         content:
-          'Back Bay Music — Professional blues band bringing authentic sounds and unforgettable performances across Delmarva. Weddings, events, restaurants, and more.',
+          'Back Bay Music — A southern Delaware band, blending jazz, funk, and blues with youthful energy and polished groove, turning every beach night into a soulful and groovy jam.',
       },
       {
         name: 'twitter:image',
