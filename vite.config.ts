@@ -5,8 +5,8 @@ import viteTsConfigPaths from 'vite-tsconfig-paths'
 import tailwindcss from '@tailwindcss/vite'
 
 const config = defineConfig({
-  // Set base path for GitHub Pages - change 'backbayblues' to your repo name
-  base: process.env.NODE_ENV === 'production' ? '/backbayblues/' : '/',
+  // Set base path for GitHub Pages
+  base: process.env.NODE_ENV === 'production' ? '/Back-Bay-Website/' : '/',
   plugins: [
     // this is the plugin that enables path aliases
     viteTsConfigPaths({
