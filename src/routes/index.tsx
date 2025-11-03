@@ -3,11 +3,14 @@ import { useState, useEffect } from 'react'
 
 export const Route = createFileRoute('/')({ component: App })
 
+// Base-aware asset helper
+const withBase = (path: string) => new URL(path, import.meta.env.BASE_URL).href
+
 const bandImages = [
-  '/Band-Pictures/2D49E183-ADD1-4009-92BE-0366AC1E0852.jpeg',
-  '/Band-Pictures/3339aa.jpeg',
-  '/Band-Pictures/9331a.jpeg',
-  '/Band-Pictures/CRG_3326-3.jpg',
+  withBase('Band-Pictures/2D49E183-ADD1-4009-92BE-0366AC1E0852.jpeg'),
+  withBase('Band-Pictures/3339aa.jpeg'),
+  withBase('Band-Pictures/9331a.jpeg'),
+  withBase('Band-Pictures/CRG_3326-3.jpg'),
 ]
 
 function App() {
@@ -32,7 +35,7 @@ function App() {
   return (
     <div>
       <div className="relative w-screen h-screen">
-        <img src="/homepage.jpeg" alt="Band Group Photo" className="w-full h-full object-cover object-bottom" />
+        <img src={withBase('homepage.jpeg')} alt="Band Group Photo" className="w-full h-full object-cover object-bottom" />
         <div className="absolute inset-0 flex items-center justify-center pt-16">
           <h1 className="text-6xl md:text-8xl font-bold text-white drop-shadow-2xl">
             Back Bay Music

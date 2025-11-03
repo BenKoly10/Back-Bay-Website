@@ -20,9 +20,10 @@ export default function Header() {
     <>
       <header className={`fixed top-0 left-0 right-0 p-4 flex items-center justify-between text-white z-30 transition-all duration-300 ${isScrolled ? 'bg-gray-900 shadow-lg' : 'bg-gray-900/80 backdrop-blur-sm'}`}>
         {/* Logo on the left */}
-        <h1 className="text-xl font-semibold">
+        <h1 className="ml-4 text-xl font-semibold">
           <Link to="/">
-            <img src="/logo-transparent.png" alt="Back Bay Blues" className="h-15" />
+          {/* Use base-aware URL for logo so it loads on GitHub Pages */}
+          <img src={new URL('logo-transparent.png', import.meta.env.BASE_URL).href} alt="Back Bay Blues" className="h-15" />
           </Link>
         </h1>
 
