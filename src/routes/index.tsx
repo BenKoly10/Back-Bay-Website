@@ -34,8 +34,8 @@ function App() {
     <div>
       <div className="relative w-full h-screen overflow-hidden">
         <img src={withBase('homepage.jpeg')} alt="Band Group Photo" className="w-full h-full object-cover object-bottom" />
-        <div className="absolute inset-0 flex items-center justify-center pt-16">
-          <h1 className="text-6xl md:text-8xl font-bold text-white drop-shadow-2xl">
+        <div className="absolute inset-0 flex items-center justify-center md:pt-16 pt-0 px-4">
+          <h1 className="text-6xl md:text-8xl font-bold text-white drop-shadow-2xl text-center mx-auto max-w-[90%]">
             Back Bay Music
           </h1>
         </div>

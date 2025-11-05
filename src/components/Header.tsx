@@ -1,7 +1,12 @@
-import { Link } from '@tanstack/react-router'
-
 import { Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+
+// Helper to produce hash-based hrefs that match client routing and SSR
+const hashHref = (path: string) => {
+  // ensure leading slash + hash
+  const p = String(path || '/').replace(/^\/+/, '')
+  return `/#/${p}`.replace(/\/\/+$/, '/')
+}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)
@@ -21,48 +26,36 @@ export default function Header() {
       <header className={`fixed top-0 left-0 right-0 px-6 py-4 flex items-center justify-between text-white z-30 transition-all duration-500 ease-in-out ${isScrolled ? 'bg-gray-900 shadow-2xl' : 'bg-linear-to-b from-black/60 via-black/40 to-transparent backdrop-blur-md'}`}>
         {/* Logo on the left */}
         <h1 className="text-xl font-semibold transform hover:scale-105 transition-transform duration-300">
-          <Link to="/" className="block">
+          <a href={hashHref('/')} className="block">
             {/* Use base-aware URL for logo so it loads on GitHub Pages */}
             <img
               src={`${(import.meta.env.BASE_URL || '/').replace(/\/+$/, '')}/logo-transparent.png`}
               alt="Back Bay Blues"
               className="h-14 md:h-16 drop-shadow-lg"
             />
-          </Link>
+          </a>
         </h1>
 
         {/* Desktop navigation - hidden on mobile/tablet */}
         <nav className="hidden lg:flex items-center gap-4 mr-4">
-          <Link
-            to="/"
+          <a
+            href={hashHref('/')}
             className="px-5 py-2.5 rounded-lg font-medium text-white hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 hover:scale-105 border border-transparent hover:border-[rgb(248,219,135)]/30"
-            activeProps={{
-              className:
-                'px-5 py-2.5 rounded-lg font-medium bg-linear-to-r from-[rgb(248,219,135)] to-[rgb(238,209,125)] text-gray-900 shadow-lg shadow-[rgb(248,219,135)]/50 scale-105 border border-[rgb(248,219,135)]/50',
-            }}
           >
             Home
-          </Link>
-          <Link
-            to="/upcoming-events"
+          </a>
+          <a
+            href={hashHref('upcoming-events')}
             className="px-5 py-2.5 rounded-lg font-medium text-white hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 hover:scale-105 border border-transparent hover:border-[rgb(248,219,135)]/30"
-            activeProps={{
-              className:
-                'px-5 py-2.5 rounded-lg font-medium bg-linear-to-r from-[rgb(248,219,135)] to-[rgb(238,209,125)] text-gray-900 shadow-lg shadow-[rgb(248,219,135)]/50 scale-105 border border-[rgb(248,219,135)]/50',
-            }}
           >
             Upcoming Events
-          </Link>
-          <Link
-            to="/book-now"
+          </a>
+          <a
+            href={hashHref('book-now')}
             className="px-5 py-2.5 rounded-lg font-medium text-white hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 hover:scale-105 border border-transparent hover:border-[rgb(248,219,135)]/30"
-            activeProps={{
-              className:
-                'px-5 py-2.5 rounded-lg font-medium bg-linear-to-r from-[rgb(248,219,135)] to-[rgb(238,209,125)] text-gray-900 shadow-lg shadow-[rgb(248,219,135)]/50 scale-105 border border-[rgb(248,219,135)]/50',
-            }}
           >
             Book Now
-          </Link>
+          </a>
         </nav>
 
         {/* Hamburger menu - visible only on mobile/tablet, positioned on the right */}
@@ -92,29 +85,28 @@ export default function Header() {
         </div>
 
         <nav className="flex-1 p-6 overflow-y-auto">
-          <Link
-            to="/upcoming-events"
+          <a
+            href={hashHref('/')}
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-4 rounded-lg hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 mb-3 border border-transparent hover:border-[rgb(248,219,135)]/30 hover:translate-x-1"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-4 rounded-lg bg-linear-to-r from-[rgb(248,219,135)] to-[rgb(238,209,125)] text-gray-900 shadow-lg shadow-[rgb(248,219,135)]/30 mb-3 border border-[rgb(248,219,135)]/50 translate-x-1',
-            }}
+          >
+            <span className="font-medium text-lg">Home</span>
+          </a>
+          <a
+            href={hashHref('upcoming-events')}
+            onClick={() => setIsOpen(false)}
+            className="flex items-center gap-3 p-4 rounded-lg hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 mb-3 border border-transparent hover:border-[rgb(248,219,135)]/30 hover:translate-x-1"
           >
             <span className="font-medium text-lg">Upcoming Events</span>
-          </Link>
+          </a>
 
-          <Link
-            to="/book-now"
+          <a
+            href={hashHref('book-now')}
             onClick={() => setIsOpen(false)}
             className="flex items-center gap-3 p-4 rounded-lg hover:bg-white/10 hover:text-[rgb(248,219,135)] transition-all duration-300 mb-3 border border-transparent hover:border-[rgb(248,219,135)]/30 hover:translate-x-1"
-            activeProps={{
-              className:
-                'flex items-center gap-3 p-4 rounded-lg bg-linear-to-r from-[rgb(248,219,135)] to-[rgb(238,209,125)] text-gray-900 shadow-lg shadow-[rgb(248,219,135)]/30 mb-3 border border-[rgb(248,219,135)]/50 translate-x-1',
-            }}
           >
             <span className="font-medium text-lg">Book Now</span>
-          </Link>
+          </a>
         </nav>
       </aside>
 
