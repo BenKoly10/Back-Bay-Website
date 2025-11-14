@@ -85,7 +85,7 @@ function App() {
               About Us
             </h2>
             <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
-              Back Bay Music is a group of young musicians from Sussex County Delaware. We have been playing together since 2018, and study music at University of Delaware. We love bringing the energy at weddings, events, and restaurants across Delmarva. When we aren't gigging, we can seen performing in University of Delaware's top jazz ensembles, as well as playing in many other local acts. Come check us out and support local musicians!
+              Back Bay Music is a group of young musicians from Sussex County, Delaware. We have been playing together since 2018 and studying music at the University of Delaware. We love bringing the energy to weddings, events, and restaurants across Delmarva. When we aren't gigging, we can be seen performing in the University of Delaware's top jazz ensembles and in many other local acts. Come check us out and support local musicians!
             </p>
           </div>
         </div>

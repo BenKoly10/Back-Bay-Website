@@ -37,11 +37,10 @@ function RouteComponent() {
           <div className="bg-white rounded-lg shadow-xl overflow-hidden">
             <iframe
               src="https://docs.google.com/forms/d/e/1FAIpQLSd8VhoVVrr0JPa8Uwm5bWXLIMIo6N31zEW4uVbEULV6FCI4TQ/viewform?embedded=true"
-              className="w-full h-[800px] md:h-[900px] border-0"
+              className="w-full h-[min(80vh,1200px)] min-h-[480px] border-0"
               title="Book Back Bay Music Form"
-            >
-              Loading…
-            </iframe>
+              loading="lazy"
+            />
           </div>
         </div>
       </section>
